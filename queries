@@ -22,7 +22,7 @@ CREATE TABLE ResponsiblePerson (	-- Таблица Мат.Ответственн
     email VARCHAR(100)
 );
 
-CREATE TABLE Equipment (	-- Таблица Обородование
+CREATE TABLE Equipment (	-- Таблица Оборудование
     equipment_id INT PRIMARY KEY,
     name VARCHAR(100),
     type VARCHAR(50),
