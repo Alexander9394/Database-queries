@@ -47,14 +47,14 @@ INSERT INTO Location (location_id, building, room) VALUES
 
 -- Для User
 INSERT INTO User (user_id, full_name, position, email, phone) VALUES
-(1, 'Иванов Иван Иванович', 'Системный администратор', 'ivanov@example.com', '+7-900-111-22-33'),
-(2, 'Петров Петр Петрович', 'Бухгалтер', 'petrov@example.com', '+7-900-222-33-44'),
-(3, 'Сидорова Анна Сергеевна', 'Менеджер', 'sidorova@example.com', '+7-900-333-44-55');
+(1, 'Иванов Иван Иванович', 'Системный администратор', 'ivanov@mail.ru', '+7-923-123-23-33'),
+(2, 'Петров Петр Петрович', 'Бухгалтер', 'petrov@mail.ru', '+7-923-342-63-77'),
+(3, 'Сидорова Анна Сергеевна', 'Менеджер', 'sidorova@mail.ru', '+7-923-125-63-75');
 
 -- Для ResponsiblePerson
 INSERT INTO ResponsiblePerson (responsible_id, full_name, department, position, email) VALUES
-(1, 'Кузнецов Алексей Дмитриевич', 'ИТ-отдел', 'Заведующий отделом', 'kuznetsov@example.com'),
-(2, 'Морозова Елена Викторовна', 'Финансовый отдел', 'Начальник отдела', 'morozova@example.com');
+(1, 'Кузнецов Алексей Дмитриевич', 'ИТ-отдел', 'Заведующий отделом', 'kuznetsov@mail.ru'),
+(2, 'Морозова Елена Викторовна', 'Финансовый отдел', 'Начальник отдела', 'morozova@mail.ru');
 
 -- Для Equipment
 INSERT INTO Equipment (equipment_id, name, type, model, serial_number, location_id, user_id, responsible_id) VALUES
