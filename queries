@@ -36,7 +36,7 @@ CREATE TABLE Equipment (	-- Таблица Оборудование
     FOREIGN KEY (responsible_id) REFERENCES ResponsiblePerson(responsible_id)
 );
 
-ЗАПРОСЫ !!!
+ЗАПРОСЫ ДЛЯ ЗАПОЛНЕНИЯ!!!
 
 -- Для Location
 INSERT INTO Location (location_id, building, room) VALUES
@@ -62,4 +62,42 @@ INSERT INTO Equipment (equipment_id, name, type, model, serial_number, location_
 (2, 'Принтер', 'Оргтехника', 'HP LaserJet P1102', 'SN987654321', 2, 2, 2),
 (3, 'Монитор', 'Компьютерная техника', 'Dell UltraSharp U2419H', 'SN112233445', 1, 3, 1),
 (4, 'Сканер', 'Оргтехника', 'Canon Lide 300', 'SN556677889', 3, 2, 2);
+
+ЗАПРОСЫ!!!!!!!!!!!!!!!!!!!!
+Все ПК в 101 кабинете
+
+SELECT e.name, e.model, l.room
+FROM Equipment e
+JOIN Location l ON e.location_id = l.location_id
+WHERE e.type = 'ПК' AND l.room = '101';
+
+Список оборудования конкретного ответственного
+
+SELECT e.name, e.model, r.full_name
+FROM Equipment e
+JOIN ResponsiblePerson r ON e.responsible_id = r.responsible_id
+WHERE r.full_name = 'Иванов И.И.';
+
+Количество техники по типам
+
+SELECT type, COUNT(*) as count
+FROM Equipment
+GROUP BY type;
+
+Найти оборудование по серийному номеру
+
+SELECT *
+FROM Equipment
+WHERE serial_number = 'SN123456';
+
+Связь пользователя с техникой
+
+SELECT e.name, e.model, u.full_name
+FROM Equipment e
+JOIN User u ON e.user_id = u.user_id
+WHERE u.full_name LIKE '%Иванов%';
+
+
+
+
 
